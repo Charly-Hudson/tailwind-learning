@@ -1,0 +1,102 @@
+Part 1
+Intro/setup
+---------------------------------------------------------------------------------------
+
+SO... Permission needed for powershell (Windows only ExecutionPolicy)
+
+Run powershell as admin form start menu
+
+get FULL path to file by creating terminal in VS code (powershell) < ctr+shift+' >
+
+Within powershell type
+
+cd notes
+ls
+
+Output:
+   Directory: I:\tailwind-learning\notes
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03/07/2024     14:46              0 notes.txt
+-a----        03/07/2024     14:54            166 script.ps1
+-a----        03/07/2024     14:55             24 test-script.ps1
+
+
+[Directory]\test-script.ps1
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Get-ExecutionPolicy -List
+
+npm init -y
+npm install tailwindcss
+mkdir public, src
+type > styles.css
+
+This initializes node.js imports tailwind and installs it locally, then makes 3 folders and 2 files:
+
+node_modules
+    lots of stuff (tailwindcss)
+public
+    [empty]
+src
+    styles.css
+package-lock.json
+package.json
+
+Within styles.css need to import the modules for tailwind With
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Within package.json change the following
+
+[before]
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1
+}
+
+[after]
+"scripts" {
+    "build-css": "tailwind build src/styles.css -o public/styles.css"
+}
+
+this makes a script to take styles.css in src and churn it through talewind to create the usable css file
+
+[powershell]
+
+npm run buiild-css
+
+======================================================================================
+
+{Extra in powershell} (to write a powershell script to do it for you)
+type > build-css.ps1 (makes file)
+Path[0]: <Directory Name>
+<ctr+c to exit Path[1]: not needed>
+
+code build-css.ps1 (opens file)
+
+write in script 
+
+npm run build-css
+
+======================================================================================
+
+---------------------------------------------------------------------------------------
+
+type > index.html
+Path[0]: tailwind-learning
+ctr+c
+
+code index.html
+
+===================================index.html=========================================
+type: doc
+press: Tab
+
+creates needed fings
+
+======================================================================================
