@@ -1,102 +1,102 @@
-Part 1
-Intro/setup
----------------------------------------------------------------------------------------
+--------------------------------------Part 1------------------------------------------
+                                    Intro/setup
 
-SO... Permission needed for powershell (Windows only ExecutionPolicy)
+    SO... Permission needed for powershell (Windows only ExecutionPolicy)
 
-Run powershell as admin form start menu
+    Run powershell as admin form start menu
 
-get FULL path to file by creating terminal in VS code (powershell) < ctr+shift+' >
+    get FULL path to file by creating terminal in VS code (powershell) < ctr+shift+' >
 
-Within powershell type
+    Within powershell type
 
-cd notes
-ls
+    cd notes
+    ls
 
-Output:
-   Directory: I:\tailwind-learning\notes
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----        03/07/2024     14:46              0 notes.txt
--a----        03/07/2024     14:54            166 script.ps1
--a----        03/07/2024     14:55             24 test-script.ps1
+    Output:
+    Directory: I:\tailwind-learning\notes
 
 
-[Directory]\test-script.ps1
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    -a----        03/07/2024     14:46              0 notes.txt
+    -a----        03/07/2024     14:54            166 script.ps1
+    -a----        03/07/2024     14:55             24 test-script.ps1
 
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Get-ExecutionPolicy -List
 
-npm init -y
-npm install tailwindcss
-mkdir public, src
-type > styles.css
+    [Directory]\test-script.ps1
 
-This initializes node.js imports tailwind and installs it locally, then makes 3 folders and 2 files:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Get-ExecutionPolicy -List
 
-node_modules
-    lots of stuff (tailwindcss)
-public
-    [empty]
-src
-    styles.css
-package-lock.json
-package.json
+    npm init -y
+    npm install tailwindcss
+    mkdir public, src
+    type > styles.css
 
-Within styles.css need to import the modules for tailwind With
+    This initializes node.js imports tailwind and installs it locally, then makes 3 folders and 2 files:
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+    node_modules
+        lots of stuff (tailwindcss)
+    public
+        [empty]
+    src
+        styles.css
+    package-lock.json
+    package.json
 
-Within package.json change the following
+    Within styles.css need to import the modules for tailwind With
 
-[before]
-"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1
-}
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
 
-[after]
-"scripts" {
-    "build-css": "tailwind build src/styles.css -o public/styles.css"
-}
+    Within package.json change the following
 
-this makes a script to take styles.css in src and churn it through talewind to create the usable css file
+    [before]
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1
+    }
 
-[powershell]
+    [after]
+    "scripts" {
+        "build-css": "tailwind build src/styles.css -o public/styles.css"
+    }
 
-npm run buiild-css
+    this makes a script to take styles.css in src and churn it through talewind to create the usable css file
 
-======================================================================================
+    [powershell]
 
-{Extra in powershell} (to write a powershell script to do it for you)
-type > build-css.ps1 (makes file)
-Path[0]: <Directory Name>
-<ctr+c to exit Path[1]: not needed>
+    npm run buiild-css
+--------------------------------------Part 2------------------------------------------
+                                    HTML stuff
+    ======================================================================================
 
-code build-css.ps1 (opens file)
+    {Extra in powershell} (to write a powershell script to do it for you)
+    type > build-css.ps1 (makes file)
+    Path[0]: <Directory Name>
+    <ctr+c to exit Path[1]: not needed>
 
-write in script 
+    code build-css.ps1 (opens file)
 
-npm run build-css
+    write in script 
 
-======================================================================================
+    npm run build-css
 
----------------------------------------------------------------------------------------
+    ======================================================================================
 
-type > index.html
-Path[0]: tailwind-learning
-ctr+c
+    ---------------------------------------------------------------------------------------
 
-code index.html
+    type > index.html
+    Path[0]: public
+    ctr+c
 
-===================================index.html=========================================
-type: doc
-press: Tab
+    code index.html
 
-creates needed fings
+    ===================================index.html=========================================
+    type: doc
+    press: Tab
 
-======================================================================================
+    creates needed fings
+
+    ======================================================================================
